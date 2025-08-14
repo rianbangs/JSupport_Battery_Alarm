@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\My_Code\\c_sharp\\JSupport\\",
+  "WorkspaceRootPath": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|c:\\my_code\\c_sharp\\jsupport\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|c:\\my_code\\c_sharp\\jsupport_battery_alarm\\jsupport\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|c:\\my_code\\c_sharp\\jsupport\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|c:\\my_code\\c_sharp\\jsupport_battery_alarm\\jsupport\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|C:\\My_Code\\c_sharp\\JSupport\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|c:\\my_code\\c_sharp\\jsupport\\usersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|c:\\my_code\\c_sharp\\jsupport_battery_alarm\\jsupport\\usersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|solutionrelative:usersettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|C:\\My_Code\\c_sharp\\JSupport\\dismissalarmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\dismissalarmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|solutionrelative:dismissalarmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|c:\\my_code\\c_sharp\\jsupport\\dismissalarmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|c:\\my_code\\c_sharp\\jsupport_battery_alarm\\jsupport\\dismissalarmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C64C2E-51CD-4566-8919-FB5388BB68A9}|JSupport.csproj|solutionrelative:dismissalarmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,9 +44,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "DismissAlarmForm.cs",
-              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport\\DismissAlarmForm.cs",
+              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\DismissAlarmForm.cs",
               "RelativeDocumentMoniker": "DismissAlarmForm.cs",
-              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport\\DismissAlarmForm.cs",
+              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\DismissAlarmForm.cs",
               "RelativeToolTip": "DismissAlarmForm.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAawCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -57,21 +57,20 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "DismissAlarmForm.cs [Design]",
-              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport\\DismissAlarmForm.cs",
+              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\DismissAlarmForm.cs",
               "RelativeDocumentMoniker": "DismissAlarmForm.cs",
               "ToolTip": "C:\\My_Code\\c_sharp\\JSupport\\DismissAlarmForm.cs [Design]",
-              "RelativeToolTip": "DismissAlarmForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\JSupport\\DismissAlarmForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T03:29:39.128Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-08-12T03:29:39.128Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport\\Form1.cs",
+              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport\\Form1.cs [Design]",
+              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-10T05:06:17.179Z",
@@ -81,37 +80,35 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "UserSettings.cs",
-              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport\\UserSettings.cs",
+              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\UserSettings.cs",
               "RelativeDocumentMoniker": "UserSettings.cs",
-              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport\\UserSettings.cs",
+              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\UserSettings.cs",
               "RelativeToolTip": "UserSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T04:58:11.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-07T04:58:11.877Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport\\Form1.Designer.cs",
+              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport\\Form1.Designer.cs",
+              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\Form1.Designer.cs",
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AgIAACsBAAAAAAAAAAApwKAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T04:51:17.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-07T04:51:17.198Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport\\Form1.cs",
+              "DocumentMoniker": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport\\Form1.cs",
+              "ToolTip": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAlwCoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAlwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-10T00:48:34.45Z",
               "EditorCaption": ""
