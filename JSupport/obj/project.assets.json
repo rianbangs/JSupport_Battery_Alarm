@@ -493,11 +493,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\My_Code\\c_sharp\\JSupport\\JSupport.csproj",
+      "projectUniqueName": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\JSupport.csproj",
       "projectName": "JSupport",
-      "projectPath": "C:\\My_Code\\c_sharp\\JSupport\\JSupport.csproj",
+      "projectPath": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\JSupport.csproj",
       "packagesPath": "C:\\Users\\jezeu\\.nuget\\packages\\",
-      "outputPath": "C:\\My_Code\\c_sharp\\JSupport\\obj\\",
+      "outputPath": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

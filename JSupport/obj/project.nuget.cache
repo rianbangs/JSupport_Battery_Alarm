@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L13UObUeCCM=",
+  "dgSpecHash": "rO99lhU1oyY=",
   "success": true,
-  "projectFilePath": "C:\\My_Code\\c_sharp\\JSupport\\JSupport.csproj",
+  "projectFilePath": "C:\\My_Code\\c_sharp\\JSupport_Battery_Alarm\\JSupport\\JSupport.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jezeu\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\jezeu\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

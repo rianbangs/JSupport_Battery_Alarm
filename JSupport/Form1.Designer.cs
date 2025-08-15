@@ -158,7 +158,6 @@
             menuExit.Size = new Size(114, 24);
             menuExit.Text = "Exit";
             menuExit.Click += menuExit_Click;
-
             // 
             // btnSaveProfile
             // 
@@ -301,6 +300,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1072, 574);
             Controls.Add(BatteryPercentage);
             Controls.Add(btnClearProfiles);

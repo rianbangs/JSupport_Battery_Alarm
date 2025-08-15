@@ -210,7 +210,7 @@
 
 
 
-        private void StopAlarm(string profileName)
+        public void StopAlarm(string profileName)
         {
             if (runningAlarms.TryGetValue(profileName, out var tuple))
             {
@@ -680,7 +680,7 @@
 
                 if (!string.IsNullOrWhiteSpace(profile.CustomMessage))
                 {
-                    using (var form = new DismissAlarmForm(profile.CustomMessage))
+                    using (var form = new DismissAlarmForm(profile.CustomMessage, this, profile.ProfileName))
                     {
                         var result = form.ShowDialog();
                         if (result == DialogResult.OK)
