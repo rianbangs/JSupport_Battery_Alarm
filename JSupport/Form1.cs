@@ -1,10 +1,12 @@
 ﻿namespace JSupport
 {
-    using System;
-    using System.Windows.Forms;
-    using NAudio.Wave;
-    using System.Text.Json;
+    using AxWMPLib;
     using Microsoft.Win32;
+    using NAudio.Wave;
+    using System;
+    using System.Text.Json;
+    using System.Windows.Forms;
+    using static System.Runtime.InteropServices.JavaScript.JSType;
 
     public partial class Form1 : Form
     {
@@ -16,7 +18,7 @@
         private Dictionary<string, (WaveOutEvent, AudioFileReader)> runningAlarms = new();
         private bool batteryMonitoringPaused = false;
         private int lastBatteryLevel = 0;
-     
+        private string profileBeingEdited = null;
 
 
 
@@ -37,7 +39,7 @@
             // Minimize to tray on startup
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
-           
+
 
         }
 
@@ -76,12 +78,19 @@
             dgvProfiles.Columns.Add(deleteBtn);
 
             dgvProfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
         }
 
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+             
+               
+                 
+            
+
             LoadSettings();          // Load saved profiles from file
             SetAutoStart(true);      // Setup for Windows autostart
 
@@ -102,7 +111,7 @@
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
             });
-             
+
 
             // Add "Exit"
             trayMenu.Items.Add("Exit", null, (s, ea) =>
@@ -111,9 +120,24 @@
             });
 
             notifyIcon1.ContextMenuStrip = trayMenu;
-        }
 
-       
+
+            this.FormBorderStyle = FormBorderStyle.None; // Hide form borders
+
+            this.TopMost = true; // Stay on top
+
+            axWindowsMediaPlayer1.URL = "assets\\battery alarm background.mp4";
+            axWindowsMediaPlayer1.uiMode = "none";
+            axWindowsMediaPlayer1.settings.setMode("loop", true);
+            axWindowsMediaPlayer1.stretchToFit = true;
+            axWindowsMediaPlayer1.Dock = DockStyle.Fill;
+            axWindowsMediaPlayer1.SendToBack();
+
+
+
+            
+
+        }
 
 
         private void StartAlarmsForAllProfiles()
@@ -247,7 +271,7 @@
                     outputDevice.Init(audioFile);
                     outputDevice.Play();
 
-                    
+
                 }
 
                 MessageBox.Show(txtMessage.Text, "Battery Alarm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -270,7 +294,7 @@
         //    outputDevice = null;
         //    audioFile = null;
 
-            
+
         //    MessageBox.Show("Alarm stopped.");
         //}
 
@@ -368,7 +392,10 @@
                     profile.BatteryThreshold + "%",
                     profile.CustomMessage
                 );
+
+                profileBeingEdited = profile.ProfileName;
             }
+           
         }
 
 
@@ -703,7 +730,7 @@
 
 
 
-        private string profileBeingEdited = null;
+        
         //private void btnEditProfile_Click(object sender, EventArgs e)
         //{
         //    if (dgvProfiles.CurrentRow != null)
@@ -826,7 +853,7 @@
             profileBeingEdited = txtProfileName.Text.Trim();
         }
 
-         
+
 
         private void btnClearProfiles_Click(object sender, EventArgs e)
         {
@@ -867,24 +894,83 @@
             }
         }
 
+        private PowerLineStatus lastPowerStatus = PowerLineStatus.Unknown;
+
         private void batteryPercentageChecker_Tick(object sender, EventArgs e)
         {
-            int currentBattery = (int)(SystemInformation.PowerStatus.BatteryLifePercent * 100);
-            BatteryPercentage.Text = $"Battery: {currentBattery}%";
+             
 
-            if (currentBattery != lastBatteryLevel)
+
+            BatteryPercentage.Font = new Font(lblMessage.Font.FontFamily, 15);
+
+            int currentBattery = (int)(SystemInformation.PowerStatus.BatteryLifePercent * 100);
+            BatteryPercentage.Text = $"{currentBattery}%";
+
+            PowerLineStatus currentStatus = SystemInformation.PowerStatus.PowerLineStatus;
+
+            // Only update video if battery level OR charger status changes
+            if (currentBattery != lastBatteryLevel || currentStatus != lastPowerStatus)
             {
                 lastBatteryLevel = currentBattery;
+                lastPowerStatus = currentStatus;
+
                 batteryMonitoringPaused = false;
                 batteryCheckTimer.Start();
+
+                if (currentStatus == PowerLineStatus.Online)
+                {
+                    axWindowsMediaPlayer2.URL = "assets\\battery1.mp4";
+                }
+                else
+                {
+                    axWindowsMediaPlayer2.URL = "assets\\battery not charging.mp4";
+                }
+
+                // Set up video player only once per change
+                axWindowsMediaPlayer2.uiMode = "none";
+                axWindowsMediaPlayer2.settings.setMode("loop", true);
+                axWindowsMediaPlayer2.stretchToFit = true;
+                axWindowsMediaPlayer2.Dock = DockStyle.Fill;
+                axWindowsMediaPlayer2.SendToBack();
             }
 
-            System.Diagnostics.Debug.WriteLine(currentBattery);
+            // Debug logs
+            System.Diagnostics.Debug.WriteLine($"Battery: {currentBattery}%, Status: {currentStatus}");
             System.Diagnostics.Debug.WriteLine("batteryMonitoringPaused: " + batteryMonitoringPaused);
+        }
+
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void axWindowsMediaPlayer2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void axWindowsMediaPlayer2_Enter_1(object sender, EventArgs e)
         {
 
         }

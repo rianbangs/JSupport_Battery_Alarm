@@ -38,16 +38,19 @@
             // lblMessage
             // 
             lblMessage.AutoSize = true;
-            lblMessage.Location = new Point(97, 409);
+            lblMessage.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold);
+            lblMessage.ImageAlign = ContentAlignment.TopCenter;
+            lblMessage.Location = new Point(12, 405);
             lblMessage.Name = "lblMessage";
-            lblMessage.Size = new Size(50, 20);
+            lblMessage.Size = new Size(52, 20);
             lblMessage.TabIndex = 0;
             lblMessage.Text = "label1";
+            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
             lblMessage.Click += lblMessage_Click;
             // 
             // btnDismiss
             // 
-            btnDismiss.Location = new Point(107, 480);
+            btnDismiss.Location = new Point(80, 480);
             btnDismiss.Name = "btnDismiss";
             btnDismiss.Size = new Size(117, 38);
             btnDismiss.TabIndex = 1;
@@ -62,14 +65,15 @@
             axWindowsMediaPlayer1.Location = new Point(0, 0);
             axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             axWindowsMediaPlayer1.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
-            axWindowsMediaPlayer1.Size = new Size(347, 595);
+            axWindowsMediaPlayer1.Size = new Size(266, 595);
             axWindowsMediaPlayer1.TabIndex = 2;
+            axWindowsMediaPlayer1.Enter += axWindowsMediaPlayer1_Enter;
             // 
             // DismissAlarmForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(347, 595);
+            ClientSize = new Size(266, 595);
             Controls.Add(btnDismiss);
             Controls.Add(lblMessage);
             Controls.Add(axWindowsMediaPlayer1);

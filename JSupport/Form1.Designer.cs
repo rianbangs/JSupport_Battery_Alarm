@@ -46,28 +46,34 @@
             btnSaveProfile = new Button();
             txtProfileName = new TextBox();
             dgvProfiles = new DataGridView();
+            panelProfileDetails = new GroupBox();
+            btnUpdateProfile = new Button();
+            btnCancelEdit = new Button();
+            label1 = new Label();
+            axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            btnClearProfiles = new Button();
+            batteryPercentageChecker = new System.Windows.Forms.Timer(components);
+            BatteryPercentage = new Label();
+            panel1 = new Panel();
+            axWindowsMediaPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
             ProfileName = new DataGridViewTextBoxColumn();
             BattPercent = new DataGridViewTextBoxColumn();
             Message = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
-            panelProfileDetails = new GroupBox();
-            btnUpdateProfile = new Button();
-            btnCancelEdit = new Button();
-            label1 = new Label();
-            btnClearProfiles = new Button();
-            batteryPercentageChecker = new System.Windows.Forms.Timer(components);
-            BatteryPercentage = new Label();
             ((System.ComponentModel.ISupportInitialize)numThreshold).BeginInit();
             trayMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProfiles).BeginInit();
             panelProfileDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer2).BeginInit();
             SuspendLayout();
             // 
             // lblThreshold
             // 
             lblThreshold.AutoSize = true;
-            lblThreshold.Location = new Point(25, 70);
+            lblThreshold.Location = new Point(-1, 44);
             lblThreshold.Name = "lblThreshold";
             lblThreshold.Size = new Size(151, 20);
             lblThreshold.TabIndex = 0;
@@ -75,7 +81,7 @@
             // 
             // numThreshold
             // 
-            numThreshold.Location = new Point(198, 70);
+            numThreshold.Location = new Point(172, 44);
             numThreshold.Name = "numThreshold";
             numThreshold.Size = new Size(150, 27);
             numThreshold.TabIndex = 1;
@@ -83,7 +89,7 @@
             // lblAudio
             // 
             lblAudio.AutoSize = true;
-            lblAudio.Location = new Point(28, 116);
+            lblAudio.Location = new Point(0, 78);
             lblAudio.Name = "lblAudio";
             lblAudio.Size = new Size(122, 20);
             lblAudio.TabIndex = 2;
@@ -91,14 +97,14 @@
             // 
             // txtAudioFile
             // 
-            txtAudioFile.Location = new Point(198, 116);
+            txtAudioFile.Location = new Point(170, 78);
             txtAudioFile.Name = "txtAudioFile";
             txtAudioFile.Size = new Size(150, 27);
             txtAudioFile.TabIndex = 3;
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(363, 115);
+            btnBrowse.Location = new Point(335, 77);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(94, 29);
             btnBrowse.TabIndex = 4;
@@ -109,7 +115,7 @@
             // lblMessage
             // 
             lblMessage.AutoSize = true;
-            lblMessage.Location = new Point(21, 163);
+            lblMessage.Location = new Point(5, 117);
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(165, 20);
             lblMessage.TabIndex = 5;
@@ -117,9 +123,9 @@
             // 
             // txtMessage
             // 
-            txtMessage.Location = new Point(198, 162);
+            txtMessage.Location = new Point(182, 116);
             txtMessage.Name = "txtMessage";
-            txtMessage.Size = new Size(125, 27);
+            txtMessage.Size = new Size(270, 27);
             txtMessage.TabIndex = 6;
             // 
             // batteryCheckTimer
@@ -161,7 +167,7 @@
             // 
             // btnSaveProfile
             // 
-            btnSaveProfile.Location = new Point(633, 251);
+            btnSaveProfile.Location = new Point(860, 279);
             btnSaveProfile.Name = "btnSaveProfile";
             btnSaveProfile.Size = new Size(115, 29);
             btnSaveProfile.TabIndex = 10;
@@ -171,21 +177,126 @@
             // 
             // txtProfileName
             // 
-            txtProfileName.Location = new Point(198, 26);
+            txtProfileName.Location = new Point(175, 6);
             txtProfileName.Name = "txtProfileName";
-            txtProfileName.Size = new Size(150, 27);
+            txtProfileName.Size = new Size(277, 27);
             txtProfileName.TabIndex = 13;
             // 
             // dgvProfiles
             // 
+            dgvProfiles.BackgroundColor = SystemColors.ActiveCaptionText;
             dgvProfiles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProfiles.Columns.AddRange(new DataGridViewColumn[] { ProfileName, BattPercent, Message, Edit, Delete });
-            dgvProfiles.Location = new Point(12, 51);
+            dgvProfiles.Location = new Point(127, 97);
             dgvProfiles.Name = "dgvProfiles";
             dgvProfiles.RowHeadersWidth = 51;
-            dgvProfiles.Size = new Size(1048, 183);
+            dgvProfiles.Size = new Size(848, 168);
             dgvProfiles.TabIndex = 14;
             dgvProfiles.CellContentClick += dgvProfiles_CellContentClick;
+            // 
+            // panelProfileDetails
+            // 
+            panelProfileDetails.Controls.Add(btnUpdateProfile);
+            panelProfileDetails.Controls.Add(btnCancelEdit);
+            panelProfileDetails.Controls.Add(label1);
+            panelProfileDetails.Controls.Add(txtProfileName);
+            panelProfileDetails.Controls.Add(numThreshold);
+            panelProfileDetails.Controls.Add(lblThreshold);
+            panelProfileDetails.Controls.Add(btnBrowse);
+            panelProfileDetails.Controls.Add(lblAudio);
+            panelProfileDetails.Controls.Add(txtAudioFile);
+            panelProfileDetails.Controls.Add(txtMessage);
+            panelProfileDetails.Controls.Add(lblMessage);
+            panelProfileDetails.Location = new Point(485, 314);
+            panelProfileDetails.Name = "panelProfileDetails";
+            panelProfileDetails.Size = new Size(490, 200);
+            panelProfileDetails.TabIndex = 15;
+            panelProfileDetails.TabStop = false;
+            // 
+            // btnUpdateProfile
+            // 
+            btnUpdateProfile.Location = new Point(116, 160);
+            btnUpdateProfile.Name = "btnUpdateProfile";
+            btnUpdateProfile.Size = new Size(94, 29);
+            btnUpdateProfile.TabIndex = 16;
+            btnUpdateProfile.Text = "save";
+            btnUpdateProfile.UseVisualStyleBackColor = true;
+            btnUpdateProfile.Click += btnUpdateProfile_Click;
+            // 
+            // btnCancelEdit
+            // 
+            btnCancelEdit.Location = new Point(265, 160);
+            btnCancelEdit.Name = "btnCancelEdit";
+            btnCancelEdit.Size = new Size(94, 29);
+            btnCancelEdit.TabIndex = 15;
+            btnCancelEdit.Text = "Cancel";
+            btnCancelEdit.UseVisualStyleBackColor = true;
+            btnCancelEdit.Click += btnCancelEdit_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(0, 13);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 20);
+            label1.TabIndex = 14;
+            label1.Text = "Profile Name";
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            axWindowsMediaPlayer1.Enabled = true;
+            axWindowsMediaPlayer1.Location = new Point(-1, -16);
+            axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            axWindowsMediaPlayer1.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
+            axWindowsMediaPlayer1.Size = new Size(1073, 646);
+            axWindowsMediaPlayer1.TabIndex = 21;
+            axWindowsMediaPlayer1.Enter += axWindowsMediaPlayer1_Enter;
+            // 
+            // btnClearProfiles
+            // 
+            btnClearProfiles.Location = new Point(-1, -3);
+            btnClearProfiles.Name = "btnClearProfiles";
+            btnClearProfiles.Size = new Size(134, 29);
+            btnClearProfiles.TabIndex = 18;
+            btnClearProfiles.Text = "Clear Profiles";
+            btnClearProfiles.UseVisualStyleBackColor = true;
+            btnClearProfiles.Visible = false;
+            btnClearProfiles.Click += btnClearProfiles_Click;
+            // 
+            // batteryPercentageChecker
+            // 
+            batteryPercentageChecker.Tick += batteryPercentageChecker_Tick;
+            // 
+            // BatteryPercentage
+            // 
+            BatteryPercentage.AutoSize = true;
+            BatteryPercentage.BackColor = SystemColors.ActiveCaptionText;
+            BatteryPercentage.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BatteryPercentage.ForeColor = SystemColors.Control;
+            BatteryPercentage.Location = new Point(49, 75);
+            BatteryPercentage.Name = "BatteryPercentage";
+            BatteryPercentage.Size = new Size(52, 20);
+            BatteryPercentage.TabIndex = 19;
+            BatteryPercentage.Text = "label2";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(BatteryPercentage);
+            panel1.Controls.Add(axWindowsMediaPlayer2);
+            panel1.Location = new Point(309, 271);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(152, 243);
+            panel1.TabIndex = 22;
+            // 
+            // axWindowsMediaPlayer2
+            // 
+            axWindowsMediaPlayer2.Enabled = true;
+            axWindowsMediaPlayer2.Location = new Point(0, 41);
+            axWindowsMediaPlayer2.Name = "axWindowsMediaPlayer2";
+            axWindowsMediaPlayer2.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer2.OcxState");
+            axWindowsMediaPlayer2.Size = new Size(160, 213);
+            axWindowsMediaPlayer2.TabIndex = 0;
+            axWindowsMediaPlayer2.Enter += axWindowsMediaPlayer2_Enter_1;
             // 
             // ProfileName
             // 
@@ -201,7 +312,7 @@
             BattPercent.Name = "BattPercent";
             BattPercent.Resizable = DataGridViewTriState.True;
             BattPercent.SortMode = DataGridViewColumnSortMode.NotSortable;
-            BattPercent.Width = 125;
+            BattPercent.Width = 50;
             // 
             // Message
             // 
@@ -224,89 +335,18 @@
             Delete.Name = "Delete";
             Delete.Width = 125;
             // 
-            // panelProfileDetails
-            // 
-            panelProfileDetails.Controls.Add(btnUpdateProfile);
-            panelProfileDetails.Controls.Add(btnCancelEdit);
-            panelProfileDetails.Controls.Add(label1);
-            panelProfileDetails.Controls.Add(txtProfileName);
-            panelProfileDetails.Controls.Add(numThreshold);
-            panelProfileDetails.Controls.Add(lblThreshold);
-            panelProfileDetails.Controls.Add(btnBrowse);
-            panelProfileDetails.Controls.Add(lblAudio);
-            panelProfileDetails.Controls.Add(txtAudioFile);
-            panelProfileDetails.Controls.Add(txtMessage);
-            panelProfileDetails.Controls.Add(lblMessage);
-            panelProfileDetails.Location = new Point(258, 286);
-            panelProfileDetails.Name = "panelProfileDetails";
-            panelProfileDetails.Size = new Size(490, 276);
-            panelProfileDetails.TabIndex = 15;
-            panelProfileDetails.TabStop = false;
-            // 
-            // btnUpdateProfile
-            // 
-            btnUpdateProfile.Location = new Point(151, 228);
-            btnUpdateProfile.Name = "btnUpdateProfile";
-            btnUpdateProfile.Size = new Size(94, 29);
-            btnUpdateProfile.TabIndex = 16;
-            btnUpdateProfile.Text = "save";
-            btnUpdateProfile.UseVisualStyleBackColor = true;
-            btnUpdateProfile.Click += btnUpdateProfile_Click;
-            // 
-            // btnCancelEdit
-            // 
-            btnCancelEdit.Location = new Point(301, 228);
-            btnCancelEdit.Name = "btnCancelEdit";
-            btnCancelEdit.Size = new Size(94, 29);
-            btnCancelEdit.TabIndex = 15;
-            btnCancelEdit.Text = "Cancel";
-            btnCancelEdit.UseVisualStyleBackColor = true;
-            btnCancelEdit.Click += btnCancelEdit_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(28, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 20);
-            label1.TabIndex = 14;
-            label1.Text = "Profile Name";
-            // 
-            // btnClearProfiles
-            // 
-            btnClearProfiles.Location = new Point(-1, -3);
-            btnClearProfiles.Name = "btnClearProfiles";
-            btnClearProfiles.Size = new Size(134, 29);
-            btnClearProfiles.TabIndex = 18;
-            btnClearProfiles.Text = "Clear Profiles";
-            btnClearProfiles.UseVisualStyleBackColor = true;
-            btnClearProfiles.Visible = false;
-            btnClearProfiles.Click += btnClearProfiles_Click;
-            // 
-            // batteryPercentageChecker
-            // 
-            batteryPercentageChecker.Tick += batteryPercentageChecker_Tick;
-            // 
-            // BatteryPercentage
-            // 
-            BatteryPercentage.AutoSize = true;
-            BatteryPercentage.Location = new Point(538, 28);
-            BatteryPercentage.Name = "BatteryPercentage";
-            BatteryPercentage.Size = new Size(50, 20);
-            BatteryPercentage.TabIndex = 19;
-            BatteryPercentage.Text = "label2";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1072, 574);
-            Controls.Add(BatteryPercentage);
+            ClientSize = new Size(1072, 622);
+            Controls.Add(panel1);
             Controls.Add(btnClearProfiles);
             Controls.Add(panelProfileDetails);
             Controls.Add(dgvProfiles);
             Controls.Add(btnSaveProfile);
+            Controls.Add(axWindowsMediaPlayer1);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -317,8 +357,11 @@
             ((System.ComponentModel.ISupportInitialize)dgvProfiles).EndInit();
             panelProfileDetails.ResumeLayout(false);
             panelProfileDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -346,6 +389,9 @@
         private Button btnClearProfiles;
         private System.Windows.Forms.Timer batteryPercentageChecker;
         private Label BatteryPercentage;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private Panel panel1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer2;
         private DataGridViewTextBoxColumn ProfileName;
         private DataGridViewTextBoxColumn BattPercent;
         private DataGridViewTextBoxColumn Message;

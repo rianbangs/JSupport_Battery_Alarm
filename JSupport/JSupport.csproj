@@ -48,6 +48,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="assets\alarm video.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\battery alarm background.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\battery charging.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\battery not charging.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\battery1.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="assets\massive_rasengan.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

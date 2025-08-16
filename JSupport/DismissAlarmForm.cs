@@ -18,11 +18,12 @@ namespace JSupport
         private string _profileName;
         public DismissAlarmForm(string customMessage, Form1 mainForm, string profileName)
         {
-             
+
             InitializeComponent();
-                lblMessage.Text = customMessage;
-                _mainForm = mainForm;
-                _profileName = profileName;
+
+            lblMessage.Text = customMessage;
+            _mainForm = mainForm;
+            _profileName = profileName;
         }
 
         private void btnDismiss_Click(object sender, EventArgs e)
@@ -38,11 +39,19 @@ namespace JSupport
 
         private void DismissAlarmForm_Load(object sender, EventArgs e)
         {
+            lblMessage.Font = new Font(lblMessage.Font.FontFamily, 10);
+            lblMessage.AutoSize = true;
+            lblMessage.MaximumSize = new Size(this.ClientSize.Width - 20, 0); // Max width
+            lblMessage.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+
+
+
             this.FormBorderStyle = FormBorderStyle.None; // Hide form borders
             this.WindowState = FormWindowState.Maximized; // Maximize window
             this.TopMost = true; // Stay on top
 
-            axWindowsMediaPlayer1.URL = "assets\\massive_rasengan.mp4";
+            axWindowsMediaPlayer1.URL = "assets\\alarm video.mp4";
             axWindowsMediaPlayer1.uiMode = "none";
             axWindowsMediaPlayer1.settings.setMode("loop", true);
             axWindowsMediaPlayer1.stretchToFit = true;
@@ -65,8 +74,10 @@ namespace JSupport
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
 
-
+        }
     }
 
 }

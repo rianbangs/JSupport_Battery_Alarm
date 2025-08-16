@@ -58,3 +58,8 @@ C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\obj\Debug\net8.0-windows\AxIn
 C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\obj\Debug\net8.0-windows\JSupport.csproj.ResolveComReference.cache
 C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\obj\Debug\net8.0-windows\JSupport.Properties.Resources.resources
 C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\bin\Debug\net8.0-windows\assets\massive_rasengan.mp4
+C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\bin\Debug\net8.0-windows\assets\battery alarm background.mp4
+C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\bin\Debug\net8.0-windows\assets\battery charging.mp4
+C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\bin\Debug\net8.0-windows\assets\battery1.mp4
+C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\bin\Debug\net8.0-windows\assets\battery not charging.mp4
+C:\My_Code\c_sharp\JSupport_Battery_Alarm\JSupport\bin\Debug\net8.0-windows\assets\alarm video.mp4
