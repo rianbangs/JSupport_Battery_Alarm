@@ -55,21 +55,21 @@
             btnUpdateProfile = new Button();
             btnCancelEdit = new Button();
             label1 = new Label();
-            axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             btnClearProfiles = new Button();
             batteryPercentageChecker = new System.Windows.Forms.Timer(components);
             BatteryPercentage = new Label();
             panel1 = new Panel();
-            axWindowsMediaPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
+            axWindowsMediaPlayer4 = new AxWMPLib.AxWindowsMediaPlayer();
             panel2 = new Panel();
             minimizeBtn = new Button();
+            axWindowsMediaPlayer3 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)numThreshold).BeginInit();
             trayMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProfiles).BeginInit();
             panelProfileDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer3).BeginInit();
             SuspendLayout();
             // 
             // lblThreshold
@@ -281,16 +281,6 @@
             label1.TabIndex = 14;
             label1.Text = "Profile Name";
             // 
-            // axWindowsMediaPlayer1
-            // 
-            axWindowsMediaPlayer1.Enabled = true;
-            axWindowsMediaPlayer1.Location = new Point(-1, -1);
-            axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            axWindowsMediaPlayer1.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
-            axWindowsMediaPlayer1.Size = new Size(1073, 631);
-            axWindowsMediaPlayer1.TabIndex = 21;
-            axWindowsMediaPlayer1.Enter += axWindowsMediaPlayer1_Enter;
-            // 
             // btnClearProfiles
             // 
             btnClearProfiles.Location = new Point(117, 24);
@@ -312,7 +302,7 @@
             BatteryPercentage.BackColor = SystemColors.Desktop;
             BatteryPercentage.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BatteryPercentage.ForeColor = Color.Transparent;
-            BatteryPercentage.Location = new Point(49, 75);
+            BatteryPercentage.Location = new Point(46, 73);
             BatteryPercentage.Name = "BatteryPercentage";
             BatteryPercentage.Size = new Size(52, 20);
             BatteryPercentage.TabIndex = 19;
@@ -321,21 +311,20 @@
             // panel1
             // 
             panel1.Controls.Add(BatteryPercentage);
-            panel1.Controls.Add(axWindowsMediaPlayer2);
-            panel1.Location = new Point(309, 271);
+            panel1.Controls.Add(axWindowsMediaPlayer4);
+            panel1.Location = new Point(333, 271);
             panel1.Name = "panel1";
-            panel1.Size = new Size(152, 243);
+            panel1.Size = new Size(145, 243);
             panel1.TabIndex = 22;
             // 
-            // axWindowsMediaPlayer2
+            // axWindowsMediaPlayer4
             // 
-            axWindowsMediaPlayer2.Enabled = true;
-            axWindowsMediaPlayer2.Location = new Point(0, 41);
-            axWindowsMediaPlayer2.Name = "axWindowsMediaPlayer2";
-            axWindowsMediaPlayer2.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer2.OcxState");
-            axWindowsMediaPlayer2.Size = new Size(160, 213);
-            axWindowsMediaPlayer2.TabIndex = 0;
-            axWindowsMediaPlayer2.Enter += axWindowsMediaPlayer2_Enter_1;
+            axWindowsMediaPlayer4.Enabled = true;
+            axWindowsMediaPlayer4.Location = new Point(-307, 3);
+            axWindowsMediaPlayer4.Name = "axWindowsMediaPlayer4";
+            axWindowsMediaPlayer4.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer4.OcxState");
+            axWindowsMediaPlayer4.Size = new Size(1012, 240);
+            axWindowsMediaPlayer4.TabIndex = 20;
             // 
             // panel2
             // 
@@ -346,6 +335,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(63, 55);
             panel2.TabIndex = 23;
+            panel2.Visible = false;
             panel2.MouseDown += mouse_Down;
             panel2.MouseMove += mouse_Move;
             // 
@@ -359,7 +349,17 @@
             minimizeBtn.Size = new Size(65, 58);
             minimizeBtn.TabIndex = 25;
             minimizeBtn.UseVisualStyleBackColor = false;
+            minimizeBtn.Visible = false;
             minimizeBtn.Click += minimizeBtn_Click;
+            // 
+            // axWindowsMediaPlayer3
+            // 
+            axWindowsMediaPlayer3.Enabled = true;
+            axWindowsMediaPlayer3.Location = new Point(68, 30);
+            axWindowsMediaPlayer3.Name = "axWindowsMediaPlayer3";
+            axWindowsMediaPlayer3.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer3.OcxState");
+            axWindowsMediaPlayer3.Size = new Size(933, 172);
+            axWindowsMediaPlayer3.TabIndex = 26;
             // 
             // Form1
             // 
@@ -373,12 +373,13 @@
             Controls.Add(panelProfileDetails);
             Controls.Add(dgvProfiles);
             Controls.Add(btnSaveProfile);
-            Controls.Add(axWindowsMediaPlayer1);
             Controls.Add(btnClearProfiles);
-            FormBorderStyle = FormBorderStyle.None;
+            Controls.Add(axWindowsMediaPlayer3);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "JSupport - Battery Alarm";
             Load += Form1_Load;
             Resize += Form1_Resize_1;
             ((System.ComponentModel.ISupportInitialize)numThreshold).EndInit();
@@ -386,10 +387,10 @@
             ((System.ComponentModel.ISupportInitialize)dgvProfiles).EndInit();
             panelProfileDetails.ResumeLayout(false);
             panelProfileDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer3).EndInit();
             ResumeLayout(false);
         }
 
@@ -428,5 +429,7 @@
         private DataGridViewButtonColumn Delete;
         private Panel panel2;
         private Button minimizeBtn;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer4;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer3;
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JSupport")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+878dfe4b63f3d2ea46f90752e9a5ea1a7826107c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c5843c5941a4b36142a62be95cf8f545fa2b081")]
 [assembly: System.Reflection.AssemblyProductAttribute("JSupport")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JSupport")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

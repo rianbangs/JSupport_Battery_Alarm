@@ -31,7 +31,7 @@
         {
             InitializeComponent();
 
-
+            this.Resize += Form1_Resize_1;
             this.FormClosing += Form1_FormClosing;
 
             SetupDataGridView();
@@ -129,20 +129,20 @@
             notifyIcon1.ContextMenuStrip = trayMenu;
 
 
-            this.FormBorderStyle = FormBorderStyle.None; // Hide form borders
-            this.TopMost = true; // Stay on top
+            //this.FormBorderStyle = FormBorderStyle.None; // Hide form borders
+            //this.TopMost = true; // Stay on top
 
 
 
 
 
 
-            axWindowsMediaPlayer1.URL = "assets\\battery alarm background.mp4";
-            axWindowsMediaPlayer1.uiMode = "none";
-            axWindowsMediaPlayer1.settings.setMode("loop", true);
-            axWindowsMediaPlayer1.stretchToFit = true;
-            axWindowsMediaPlayer1.Dock = DockStyle.Fill;
-            axWindowsMediaPlayer1.SendToBack();
+            axWindowsMediaPlayer3.URL = "assets\\battery alarm background.mp4";
+            axWindowsMediaPlayer3.uiMode = "none";
+            axWindowsMediaPlayer3.settings.setMode("loop", true);
+            axWindowsMediaPlayer3.stretchToFit = true;
+            axWindowsMediaPlayer3.Dock = DockStyle.Fill;
+            axWindowsMediaPlayer3.SendToBack();
 
 
 
@@ -459,7 +459,7 @@
             if (this.WindowState == FormWindowState.Minimized)
             {
                 notifyIcon1.Visible = true;       // Show tray icon
-                this.ShowInTaskbar = false;       // Hide from taskbar
+                //this.ShowInTaskbar = false;       // Hide from taskbar
                 this.Hide();                      // Hide the form window
 
 
@@ -930,19 +930,19 @@
 
                 if (currentStatus == PowerLineStatus.Online)
                 {
-                    axWindowsMediaPlayer2.URL = "assets\\battery1.mp4";
+                    axWindowsMediaPlayer4.URL = "assets\\battery1.mp4";
                 }
                 else
                 {
-                    axWindowsMediaPlayer2.URL = "assets\\battery not charging.mp4";
+                    axWindowsMediaPlayer4.URL = "assets\\battery not charging.mp4";
                 }
 
-                // Set up video player only once per change
-                axWindowsMediaPlayer2.uiMode = "none";
-                axWindowsMediaPlayer2.settings.setMode("loop", true);
-                axWindowsMediaPlayer2.stretchToFit = true;
-                axWindowsMediaPlayer2.Dock = DockStyle.Fill;
-                axWindowsMediaPlayer2.SendToBack();
+                //Set up video player only once per change
+                axWindowsMediaPlayer4.uiMode = "none";
+                axWindowsMediaPlayer4.settings.setMode("loop", true);
+                axWindowsMediaPlayer4.stretchToFit = true;
+                axWindowsMediaPlayer4.Dock = DockStyle.Fill;
+                axWindowsMediaPlayer4.SendToBack();
             }
 
             // Debug logs
