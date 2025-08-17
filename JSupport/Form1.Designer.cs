@@ -46,6 +46,11 @@
             btnSaveProfile = new Button();
             txtProfileName = new TextBox();
             dgvProfiles = new DataGridView();
+            ProfileName = new DataGridViewTextBoxColumn();
+            BattPercent = new DataGridViewTextBoxColumn();
+            Message = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewButtonColumn();
+            Delete = new DataGridViewButtonColumn();
             panelProfileDetails = new GroupBox();
             btnUpdateProfile = new Button();
             btnCancelEdit = new Button();
@@ -56,11 +61,8 @@
             BatteryPercentage = new Label();
             panel1 = new Panel();
             axWindowsMediaPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
-            ProfileName = new DataGridViewTextBoxColumn();
-            BattPercent = new DataGridViewTextBoxColumn();
-            Message = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewButtonColumn();
-            Delete = new DataGridViewButtonColumn();
+            panel2 = new Panel();
+            minimizeBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)numThreshold).BeginInit();
             trayMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProfiles).BeginInit();
@@ -194,6 +196,43 @@
             dgvProfiles.TabIndex = 14;
             dgvProfiles.CellContentClick += dgvProfiles_CellContentClick;
             // 
+            // ProfileName
+            // 
+            ProfileName.HeaderText = "Profile Name";
+            ProfileName.MinimumWidth = 6;
+            ProfileName.Name = "ProfileName";
+            ProfileName.Width = 150;
+            // 
+            // BattPercent
+            // 
+            BattPercent.HeaderText = "Battery %";
+            BattPercent.MinimumWidth = 6;
+            BattPercent.Name = "BattPercent";
+            BattPercent.Resizable = DataGridViewTriState.True;
+            BattPercent.SortMode = DataGridViewColumnSortMode.NotSortable;
+            BattPercent.Width = 50;
+            // 
+            // Message
+            // 
+            Message.HeaderText = "Message";
+            Message.MinimumWidth = 6;
+            Message.Name = "Message";
+            Message.Width = 180;
+            // 
+            // Edit
+            // 
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Width = 125;
+            // 
+            // Delete
+            // 
+            Delete.HeaderText = "Delete";
+            Delete.MinimumWidth = 6;
+            Delete.Name = "Delete";
+            Delete.Width = 125;
+            // 
             // panelProfileDetails
             // 
             panelProfileDetails.Controls.Add(btnUpdateProfile);
@@ -245,16 +284,16 @@
             // axWindowsMediaPlayer1
             // 
             axWindowsMediaPlayer1.Enabled = true;
-            axWindowsMediaPlayer1.Location = new Point(-1, -16);
+            axWindowsMediaPlayer1.Location = new Point(-1, -1);
             axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             axWindowsMediaPlayer1.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
-            axWindowsMediaPlayer1.Size = new Size(1073, 646);
+            axWindowsMediaPlayer1.Size = new Size(1073, 631);
             axWindowsMediaPlayer1.TabIndex = 21;
             axWindowsMediaPlayer1.Enter += axWindowsMediaPlayer1_Enter;
             // 
             // btnClearProfiles
             // 
-            btnClearProfiles.Location = new Point(-1, -3);
+            btnClearProfiles.Location = new Point(117, 24);
             btnClearProfiles.Name = "btnClearProfiles";
             btnClearProfiles.Size = new Size(134, 29);
             btnClearProfiles.TabIndex = 18;
@@ -270,9 +309,9 @@
             // BatteryPercentage
             // 
             BatteryPercentage.AutoSize = true;
-            BatteryPercentage.BackColor = SystemColors.ActiveCaptionText;
+            BatteryPercentage.BackColor = SystemColors.Desktop;
             BatteryPercentage.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BatteryPercentage.ForeColor = SystemColors.Control;
+            BatteryPercentage.ForeColor = Color.Transparent;
             BatteryPercentage.Location = new Point(49, 75);
             BatteryPercentage.Name = "BatteryPercentage";
             BatteryPercentage.Size = new Size(52, 20);
@@ -298,42 +337,29 @@
             axWindowsMediaPlayer2.TabIndex = 0;
             axWindowsMediaPlayer2.Enter += axWindowsMediaPlayer2_Enter_1;
             // 
-            // ProfileName
+            // panel2
             // 
-            ProfileName.HeaderText = "Profile Name";
-            ProfileName.MinimumWidth = 6;
-            ProfileName.Name = "ProfileName";
-            ProfileName.Width = 150;
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = Properties.Resources.movable;
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Location = new Point(-1, -1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(63, 55);
+            panel2.TabIndex = 23;
+            panel2.MouseDown += mouse_Down;
+            panel2.MouseMove += mouse_Move;
             // 
-            // BattPercent
+            // minimizeBtn
             // 
-            BattPercent.HeaderText = "Battery %";
-            BattPercent.MinimumWidth = 6;
-            BattPercent.Name = "BattPercent";
-            BattPercent.Resizable = DataGridViewTriState.True;
-            BattPercent.SortMode = DataGridViewColumnSortMode.NotSortable;
-            BattPercent.Width = 50;
-            // 
-            // Message
-            // 
-            Message.HeaderText = "Message";
-            Message.MinimumWidth = 6;
-            Message.Name = "Message";
-            Message.Width = 180;
-            // 
-            // Edit
-            // 
-            Edit.HeaderText = "Edit";
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.Width = 125;
-            // 
-            // Delete
-            // 
-            Delete.HeaderText = "Delete";
-            Delete.MinimumWidth = 6;
-            Delete.Name = "Delete";
-            Delete.Width = 125;
+            minimizeBtn.BackColor = Color.Transparent;
+            minimizeBtn.BackgroundImage = Properties.Resources.minimize1;
+            minimizeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            minimizeBtn.Location = new Point(1007, -4);
+            minimizeBtn.Name = "minimizeBtn";
+            minimizeBtn.Size = new Size(65, 58);
+            minimizeBtn.TabIndex = 25;
+            minimizeBtn.UseVisualStyleBackColor = false;
+            minimizeBtn.Click += minimizeBtn_Click;
             // 
             // Form1
             // 
@@ -341,12 +367,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1072, 622);
+            Controls.Add(minimizeBtn);
+            Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(btnClearProfiles);
             Controls.Add(panelProfileDetails);
             Controls.Add(dgvProfiles);
             Controls.Add(btnSaveProfile);
             Controls.Add(axWindowsMediaPlayer1);
+            Controls.Add(btnClearProfiles);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -397,5 +426,7 @@
         private DataGridViewTextBoxColumn Message;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
+        private Panel panel2;
+        private Button minimizeBtn;
     }
 }

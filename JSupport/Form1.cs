@@ -6,7 +6,8 @@
     using System;
     using System.Text.Json;
     using System.Windows.Forms;
-    using static System.Runtime.InteropServices.JavaScript.JSType;
+
+
 
     public partial class Form1 : Form
     {
@@ -22,9 +23,14 @@
 
 
 
+
+        public Point mouseLocation;
+
+
         public Form1()
         {
             InitializeComponent();
+
 
             this.FormClosing += Form1_FormClosing;
 
@@ -38,10 +44,11 @@
 
             // Minimize to tray on startup
             this.WindowState = FormWindowState.Minimized;
-            this.ShowInTaskbar = false;
+            this.ShowInTaskbar = true;
 
 
         }
+
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -78,7 +85,7 @@
             dgvProfiles.Columns.Add(deleteBtn);
 
             dgvProfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            
+
         }
 
 
@@ -86,10 +93,10 @@
         private void Form1_Load(object sender, EventArgs e)
         {
 
-             
-               
-                 
-            
+
+
+
+
 
             LoadSettings();          // Load saved profiles from file
             SetAutoStart(true);      // Setup for Windows autostart
@@ -123,8 +130,12 @@
 
 
             this.FormBorderStyle = FormBorderStyle.None; // Hide form borders
-
             this.TopMost = true; // Stay on top
+
+
+
+
+
 
             axWindowsMediaPlayer1.URL = "assets\\battery alarm background.mp4";
             axWindowsMediaPlayer1.uiMode = "none";
@@ -135,7 +146,7 @@
 
 
 
-            
+
 
         }
 
@@ -395,7 +406,7 @@
 
                 profileBeingEdited = profile.ProfileName;
             }
-           
+
         }
 
 
@@ -730,7 +741,7 @@
 
 
 
-        
+
         //private void btnEditProfile_Click(object sender, EventArgs e)
         //{
         //    if (dgvProfiles.CurrentRow != null)
@@ -898,7 +909,7 @@
 
         private void batteryPercentageChecker_Tick(object sender, EventArgs e)
         {
-             
+
 
 
             BatteryPercentage.Font = new Font(lblMessage.Font.FontFamily, 15);
@@ -973,6 +984,30 @@
         private void axWindowsMediaPlayer2_Enter_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void mouse_Down(object sender, MouseEventArgs e)
+        {
+            mouseLocation = new Point(-e.X, -e.Y);
+        }
+
+        private void mouse_Move(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
+            }
+        }
+
+        
+
+        private void minimizeBtn_Click(object sender, EventArgs e)
+        {
+            // Minimize to tray on startup
+            this.WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = true;
         }
     }
 }

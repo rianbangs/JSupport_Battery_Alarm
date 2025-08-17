@@ -50,9 +50,10 @@
             // 
             // btnDismiss
             // 
-            btnDismiss.Location = new Point(80, 480);
+            btnDismiss.BackgroundImageLayout = ImageLayout.Stretch;
+            btnDismiss.Location = new Point(71, 473);
             btnDismiss.Name = "btnDismiss";
-            btnDismiss.Size = new Size(117, 38);
+            btnDismiss.Size = new Size(97, 40);
             btnDismiss.TabIndex = 1;
             btnDismiss.Text = "Dismiss";
             btnDismiss.UseVisualStyleBackColor = true;
@@ -77,6 +78,7 @@
             Controls.Add(btnDismiss);
             Controls.Add(lblMessage);
             Controls.Add(axWindowsMediaPlayer1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "DismissAlarmForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DismissAlarmForm";
