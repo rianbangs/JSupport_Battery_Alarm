@@ -52,7 +52,7 @@ This app is ideal for users who want to:
 To use **JSupport - Battery Alarm** without building it yourself:
 
 1. **Download the folder**:  
-   `JSupport/bin/Debug/net8.0-windows`
+  [ `JSupport/bin/Debug/net8.0-windows`](https://github.com/rianbangs/JSupport_Battery_Alarm/blob/e695cfeaa0d13563df36fd1f203d27bd812d626b/JSupport/bin/Debug/net8.0-windows.zip)
 
 2. **Run the app**:  
    Double-click `JSupport.exe` to start it.
